@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <H1>Add a car to your collection</H1>
+    <form action="/car/create" method="post">
+        {% csrf_token %}
+        <input type="text" name="make" placeholder="Make">
+        <input type="text" name="model" placeholder="Model">
+        <input type="text" name="year" placeholder="Year">
+        <input type="submit" name="add" placeholder="Add">
+    </form>
+    <a href="/dashboard">Back to Dashboard</a>
+</body>
+</html>

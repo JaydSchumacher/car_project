@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    {{curUser.driver.all}}
+    <a href="/logout">Logout</a>
+    <h1>Welcome {{user}}</h1>
+    <a href="/car/add">Add Car</a><br>
+    {{%for car in curUser.cars.all%}
+    <p>{{car.car_brand}} {{car.car_model}} {{car.year}}</p>
+    {%endfor%}}
+    <H3>Other Drivers</H3>
+    {{%for user in otherUser.all%}
+    <a href="/login/userprofile/{{user.id}}">{{user.first_name}}</a>
+    {%endfor%}}
+</body>
+</html>
